@@ -1,6 +1,6 @@
 import React from 'react'
 import '../index.css';
-import { listContacts } from '../controllers/contact.Controller';
+import { listContacts,addContact } from '../controllers/contact.Controller';
 import FormContact from './FormContact';
 
 const PanelContacts = () => {

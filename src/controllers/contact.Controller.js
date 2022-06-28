@@ -18,16 +18,21 @@ let Contacts = [
         status: true
     }
 ]
-    
-    export const listContacts = () => {
-        try {
-            return  Contacts;
-        } catch (error) {
-            console.log(error)
-        }
-        
+
+export const listContacts = () => {
+    try {
+        return Contacts;
+    } catch (error) {
+        console.log(error)
     }
-    
+
+}
+
+export const addContact = (Contact) =>{
+    Contacts = [...Contacts,Contact ];
+    return Contacts;
+}
+
 
 
 
