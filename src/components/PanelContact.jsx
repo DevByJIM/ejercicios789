@@ -1,18 +1,18 @@
 import React from 'react'
 import '../index.css';
-import { listContacts } from '../controllers/contact.Controller';
+import { listContacts,addContact } from '../controllers/contact.Controller';
 import FormContact from './FormContact';
 
 const PanelContacts = () => {
 
     let lstContact = listContacts();
-    console.log("asd" + lstContact)
+    
     return (
         <>
             {lstContact.map((item, index) => {
                 return (
-                    <div className='card outline m-1'>
-                        <div key={index} className='card-header d-flex justify-content-between'>
+                    <div key={index} className='card outline m-1'>
+                        <div  className='card-header d-flex justify-content-between'>
 
                             <h4 >{index + 1}. {item.name}</h4>
                             <div>
@@ -25,7 +25,7 @@ const PanelContacts = () => {
                 )
 
             })}
-            <FormContact />
+            <FormContact add={addContact} />
         </>
     )
 }
