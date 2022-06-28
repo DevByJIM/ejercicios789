@@ -28,9 +28,28 @@ export const listContacts = () => {
 
 }
 
-export const addContact = (Contact) =>{
-    Contacts = [...Contacts,Contact ];
-    return Contacts;
+
+export const addContact = (contact) => {
+    try {
+        Contacts = [...Contacts, contact];
+        console.log({ Contacts });
+        return Contacts;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const delContact = (contact) => {
+    try {
+        const tempContact = Contacts.filter(item => item.id !== itemId);
+        Contacts = [...Contacts, contact];
+        console.log({ Contacts });
+        return Contacts;
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 

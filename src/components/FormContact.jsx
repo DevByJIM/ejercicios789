@@ -1,10 +1,19 @@
 import React from 'react'
 
-const FormContact = () => {
+const FormContact = ({add}) => {
 
+
+const addContact = (e) =>{
+  e.preventDefault();  
+  const contact = {
+      name: 'Luis',
+      status: true
+    };
+    add(contact);
+}
 
   return (
-    <form className='m-4'>
+    <form className='m-4' onSubmit={addContact}>
         <div className='input-group'>
 
       <input 
