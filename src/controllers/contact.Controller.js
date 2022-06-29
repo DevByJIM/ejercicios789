@@ -1,6 +1,6 @@
 
 
-let Contacts = [
+export const Contacts = [
     {
         name: 'José Ignacio',
         status: true
@@ -19,38 +19,6 @@ let Contacts = [
     }
 ]
 
-export const listContacts = () => {
-    try {
-        return Contacts;
-    } catch (error) {
-        console.log(error)
-    }
-
-}
-
-
-export const addContact = (contact) => {
-    try {
-        Contacts = [...Contacts, contact];
-        console.log({ Contacts });
-        return Contacts;
-
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-export const delContact = (contact) => {
-    try {
-        const tempContact = Contacts.filter(item => item.name !== contact.name);
-        Contacts = tempContact;
-        console.log({ tempContact });
-        return Contacts;
-
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 
 
