@@ -9,10 +9,19 @@ const PanelContacts = () => {
 
     const [contacts, setContacts] = useState (lstContacts);
     
+    const conection =(contact) =>{
+        try {
+            contacts.filter(item => item.name == contact.name);
+        } catch (error) {
+            console.log(error);
+        }
+    }
     
     const addContact = (contact) => {
         try {
-            setContacts([...contacts, contact]);  
+            const tempContact = contacts.filter(item => item.name == contact.name);
+            if(tempContact.length===0)
+                setContacts([...contacts, contact]);  
         } catch (error) {
             console.log(error);
         }
@@ -21,8 +30,6 @@ const PanelContacts = () => {
     const delContact = (contact) => {
         try {
             setContacts(contacts.filter(item => item.name !== contact.name));
-            console.log({ contacts });
-    
         } catch (error) {
             console.log(error);
         }
@@ -40,7 +47,7 @@ const PanelContacts = () => {
                             <div>
                                 <button className="btn btn-primary me-1">ONLINE</button>
                                 <button className="btn btn-danger"
-                                    onClick={delContact}>DEL</button>
+                                    onClick={() => delContact(item)}>DEL</button>
                             </div>
                         </div>
                     </div>
