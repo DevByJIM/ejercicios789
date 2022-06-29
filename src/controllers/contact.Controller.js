@@ -42,9 +42,9 @@ export const addContact = (contact) => {
 
 export const delContact = (contact) => {
     try {
-        const tempContact = Contacts.filter(item => item.id !== itemId);
-        Contacts = [...Contacts, contact];
-        console.log({ Contacts });
+        const tempContact = Contacts.filter(item => item.name !== contact.name);
+        Contacts = tempContact;
+        console.log({ tempContact });
         return Contacts;
 
     } catch (error) {
